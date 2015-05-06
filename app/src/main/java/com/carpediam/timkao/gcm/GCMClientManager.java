@@ -151,7 +151,7 @@ public class GCMClientManager {
         editor.putString(PROPERTY_REG_ID, regId);
         editor.putInt(PROPERTY_APP_VERSION, appVersion);
         editor.commit();
-        storeRegIdinServer();
+        //storeRegIdinServer();
     }
 
     /**

@@ -17,7 +17,7 @@ import android.util.Log;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 public class GcmMessageHandler extends IntentService {
-    public static final int MESSAGE_NOTIFICATION_ID = 435345;
+    public static int MESSAGE_NOTIFICATION_ID = 435345;
 
     public GcmMessageHandler() {
         super("GcmMessageHandler");
@@ -67,9 +67,10 @@ public class GcmMessageHandler extends IntentService {
 
     // Creates notification based on title and body received
     private void createNotification(String title, String body) {
+        MESSAGE_NOTIFICATION_ID++;
         Context context = getBaseContext();
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.abc_btn_check_material).setContentTitle(title)
+                .setSmallIcon(R.drawable.common_signin_btn_icon_light).setContentTitle(title)
                 .setContentText(body);
         NotificationManager mNotificationManager = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);

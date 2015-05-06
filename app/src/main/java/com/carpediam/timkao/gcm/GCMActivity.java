@@ -25,6 +25,10 @@ public class GCMActivity extends Activity {
                 GCMmsg.setText(GCM_MSG);
             }
         } else {
+            //setting
+            GCMConfiguration.PROJECT_NUMBER = "1063942889959";
+
+
             pushClientManager = new GCMClientManager(this, GCMConfiguration.PROJECT_NUMBER);
             pushClientManager.registerIfNeeded(new GCMClientManager.RegistrationCompletedHandler() {
                 @Override
